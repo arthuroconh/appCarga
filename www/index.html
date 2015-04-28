@@ -54,21 +54,31 @@
                 dataType:'json', 
                 error:function(jqXHR,text_status,strError){}, 
                 success:function(data){ 
-                $("#result").html(data);  
+                $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
+                $("#completo").addClass("escondido");
+                $("#completo2").removeClass("escondido");
+                $("#completo2").addClass("visible");
                 } 
             });
         }
         </script>
     </head>
     <style type="text/css">
+    html,body{
+        height: 100%;
+    }
     #result{
-        width: 100px;
-        height: 100px;
+        width:100%;
+        height: 100%;
         font-size: 15px;
-        border: 1px solid black;
+    }
+    #result img{
+        width:100%;
+        height: 100%;
+        margin-bottom: -5px;
     }
     input{
-        width: 300px;
+        width: 50%;
         height: 100px;
     }
     #cargando{
@@ -81,8 +91,9 @@
         position: absolute;
     }
     #cargando img{
-        margin-top: 20%;
-        margin-left: 50%;
+        margin-top: 40%;
+        margin-left: 20%;
+        width: 50%;
     }
     .visible{
         display: block;
@@ -100,15 +111,19 @@
     .completo{
         z-index: 20;
     }
+    #completo2{
+        width: 100%;
+        height: 100%;
+    }
     </style>
     <body>
         <div id="cargando">
             <img src="load.gif">
         </div>
-        <div id="completo"><center><b>Bikes or Cars</b></center> 
-            <center><input onclick="connect(this.value)" type="button" value="8" /></center> 
-            <center><input onclick="connect(this.value)" type="button" value="9" /></center> 
-            <center><b>Results</b></center> 
+        <div id="completo">
+            <center><input onclick="connect(this.value)" type="button" value="Reclama codigo"/></center>
+        </div>
+        <div id="completo2" class="escondido">
             <section id="result"></section>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
