@@ -30,6 +30,28 @@
         <script charset="utf-8" type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
         <title>Hello World</title>
+        <script type="text/javascript" charset="utf-8">
+
+            // Wait for device API libraries to load
+            //
+            function onLoad() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+            // device APIs are available
+            //
+            function onDeviceReady() {
+                // Register the event listener
+                document.addEventListener("backbutton", onBackKeyDown, false);
+            }
+
+            // Handle the back button
+            //
+            function onBackKeyDown() {
+                alert('Deseasalir?')
+            }
+
+            </script>
         <script type="text/javascript">
             $('#cargando').ready(function(){
   
