@@ -32,18 +32,26 @@
         <title>Hello World</title>
 
         <script type="text/javascript" charset="utf-8">
-                // This is your app's init method. Here's an example of how to use it
-                function init() {
-                    document.addEventListener("deviceready", onDR, false);
-                } 
-                function onDR(){
-                    document.addEventListener("backbutton", backKeyDown, true);
-                    //boot your app...
-                }
-                function backKeyDown() { 
-                    // do something here if you wish
-                    // alert('go back!');
-                }
+
+            // Wait for device API libraries to load
+            //
+            function onLoad() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+            // device APIs are available
+            //
+            function onDeviceReady() {
+                // Register the event listener
+                document.addEventListener("backbutton", onBackKeyDown, false);
+            }
+
+            // Handle the back button
+            //
+            function onBackKeyDown() {
+                alert('Desea salir?');
+            }
+
             </script>
         <script type="text/javascript">
             $('#cargando').ready(function(){
@@ -71,8 +79,12 @@
                 success:function(data){ 
                 $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
                 $("#completo").addClass("escondido");
+                $('#cargando').show();
                 $("#completo2").removeClass("escondido");
                 $("#completo2").addClass("visible");
+                $("#op").removeClass("visible");
+                $("#op").addClass("escondido");
+                $('#cargando').hide();
                 } 
             });
         }
@@ -92,10 +104,7 @@
         height: 100%;
         margin-bottom: -5px;
     }
-    input{
-        width: 50%;
-        height: 100px;
-    }
+
     #cargando{
         width: 100%;
         height: 100%;
@@ -136,8 +145,10 @@
             <img src="load.gif">
         </div>
         <div id="completo">
-            <center><input onclick="connect(this.value)" type="button" value="Reclama codigo"/></center>
+            <center><input onclick="connect(this.value)" type="button" value="Reclama c&oacute;digo"/></center>
         </div>
+            <div style="clear:both"></div>        
+            <center id="op" class="visible"><img src="img/op.png"></center>
         <div id="completo2" class="escondido">
             <section id="result"></section>
         </div>
