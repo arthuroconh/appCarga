@@ -32,26 +32,18 @@
         <title>Hello World</title>
 
         <script type="text/javascript" charset="utf-8">
-
-            // Wait for device API libraries to load
-            //
-            function onLoad() {
-                document.addEventListener("deviceready", onDeviceReady, false);
-            }
-
-            // device APIs are available
-            //
-            function onDeviceReady() {
-                // Register the event listener
-                document.addEventListener("backbutton", onBackKeyDown, true);
-            }
-
-            // Handle the back button
-            //
-            function onBackKeyDown() {
-                alert('Desea salir?');
-            }
-
+                // This is your app's init method. Here's an example of how to use it
+                function init() {
+                    document.addEventListener("deviceready", onDR, false);
+                } 
+                function onDR(){
+                    document.addEventListener("backbutton", backKeyDown, true);
+                    //boot your app...
+                }
+                function backKeyDown() { 
+                    // do something here if you wish
+                    // alert('go back!');
+                }
             </script>
         <script type="text/javascript">
             $('#cargando').ready(function(){
@@ -71,7 +63,7 @@
         { 
         var term= {button:e}; 
         $.ajax({ 
-                url:'buscar.php', 
+                url:'http://desarrollotricolor.com.ve/busqueda/buscar.php', 
                 type:'POST', 
                 data:term, 
                 dataType:'json', 
