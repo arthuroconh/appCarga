@@ -78,6 +78,7 @@
                 error:function(jqXHR,text_status,strError){}, 
                 success:function(data){ 
                 $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
+                $("result").ready(function() {
                 $("#completo").addClass("escondido");
                 $('#cargando').show();
                 $("#completo2").removeClass("escondido");
@@ -85,6 +86,7 @@
                 $("#op").removeClass("visible");
                 $("#op").addClass("escondido");
                 $('#cargando').hide();
+                 });
                 } 
             });
         }
