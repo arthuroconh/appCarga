@@ -59,11 +59,6 @@
                 $('#cargando').ajaxStart(function() {
                     $(this).show();
                 });
-  
-
-                $('#cargando').ajaxStop(function() {
-                    $(this).hide();
-                });
             });
         </script>
         <script charset="utf−8" type="text/javascript">
@@ -77,10 +72,10 @@
                 dataType:'json', 
                 error:function(jqXHR,text_status,strError){}, 
                 success:function(data){ 
+                $('#cargando').show();
                 $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
                 $("result").ready(function() {
                 $("#completo").addClass("escondido");
-                $('#cargando').show();
                 $("#completo2").removeClass("escondido");
                 $("#completo2").addClass("visible");
                 $("#op").removeClass("visible");
