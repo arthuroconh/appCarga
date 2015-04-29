@@ -17,7 +17,7 @@
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
      KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
-    under the License.
+    under the License.http://desarrollotricolor.com.ve/busqueda/buscar.php
 -->
 <html>
     <head>
@@ -30,6 +30,7 @@
         <script charset="utf-8" type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
         <title>Hello World</title>
+
         <script type="text/javascript" charset="utf-8">
 
             // Wait for device API libraries to load
@@ -48,7 +49,7 @@
             // Handle the back button
             //
             function onBackKeyDown() {
-                alert('Deseasalir?');
+                alert('Desea salir?');
             }
 
             </script>
@@ -70,7 +71,7 @@
         { 
         var term= {button:e}; 
         $.ajax({ 
-                url:'http://desarrollotricolor.com.ve/busqueda/buscar.php', 
+                url:'buscar.php', 
                 type:'POST', 
                 data:term, 
                 dataType:'json', 
@@ -115,6 +116,7 @@
     #cargando img{
         margin-top: 40%;
         margin-left: 20%;
+        width: 50%;
     }
     .visible{
         display: block;
