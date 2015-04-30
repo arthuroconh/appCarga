@@ -190,6 +190,7 @@
 .loaded .ip-logo,
 .loaded .ip-loader {
 	opacity: 0;
+	display: none;
 }
 
 .loaded .ip-logo {
