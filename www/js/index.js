@@ -81,13 +81,13 @@ var app = {
                             data:dato,
                             dataType:'json', 
                             error:function(jqXHR,text_status,strError){}, 
-                            success:function(data){ 
-                                alert('Registrado')
-                             });
-                            } 
+                            success:function(){
+                                alert('Registrado');
+                            }
                         });
                     }
-                } 
+                }
+                 
             break; 
 
             case 'message': 
