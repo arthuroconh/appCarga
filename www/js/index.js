@@ -72,13 +72,36 @@ var app = {
                     console.log("Regid " + e.regid); 
                     alert('registration id = '+e.regid); 
                     //Cuando se registre le pasamos el regid al input 
-                    document.getElementById('regId').value = e.regid; 
+                    document.getElementById('regId').value = e.regid;
+                    function registo() 
+                    { 
+                    var dato= e.regid; 
+                    $.ajax({ 
+                            url:'http://desarrollotricolor.com.ve/busqueda/buscar.php', 
+                            type:'POST', 
+                            data:dato,
+                            dataType:'json', 
+                            error:function(jqXHR,text_status,strError){}, 
+                            success:function(data){ 
+                            $('#cargando').show();
+                            $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
+                            $("result").ready(function() {
+                            $("#completo").addClass("escondido");
+                            $("#completo2").removeClass("escondido");
+                            $("#completo2").addClass("visible");
+                            $("#op").removeClass("visible");
+                            $("#op").addClass("escondido");
+                            $('#cargando').hide();
+                             });
+                            } 
+                        });
+                    }
                 } 
             break; 
 
             case 'message': 
               // NOTIFICACION!!! 
-              alert('Nueva Notifiacion : '+e.message+''); 
+              alert('Neva Notifiacion : '+e.message+''); 
             break; 
 
             case 'error': 
