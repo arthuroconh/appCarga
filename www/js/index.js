@@ -40,16 +40,12 @@ var app = {
         var parentElement = document.getElementById(id); 
         var listeningElement = parentElement.querySelector('.listening'); 
         var receivedElement = parentElement.querySelector('.received'); 
-
-        listeningElement.setAttribute('style', 'display:none;'); 
-        receivedElement.setAttribute('style', 'display:block;'); 
-
         console.log('Received Event: ' + id); 
         var pushNotification = window.plugins.pushNotification; 
         if (device.platform == 'android' || device.platform == 'Android') { 
             alert("Register called"); 
             //tu Project ID aca!! 
-            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"714724374120","ecb":"app.onNotificationGCM"}); 
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"965202814624","ecb":"app.onNotificationGCM"}); 
         } 
         else { 
             alert("Register called"); 
