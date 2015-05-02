@@ -799,16 +799,19 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
             <center><form id="formulario" name="formulario" method="post" action="http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php"> 
                 <input type="text" id="name" name="name" placeholder="Nombre" required>
                 <input type="text" id="email" name="email" placeholder="Correo" required>
-                <input type="text" name="regId" id="regId" readonly="readonly" placeholder="regId" style="display:none">
+                <input type="text" name="regId" id="regId" readonly="readonly" placeholder="regId">
                 <p><button type="button" onclick="registrar();">Registar</button></p> 
             </form>
-            </center> 
+            </center>
+            <div id="deviceready" class="blink" style="display:none !important;"> 
+                <p class="event listening">Connecting to Device</p> 
+                <p class="event received">Device is Ready</p> 
+            </div>    
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="js/classie.js"></script>
         <script src="js/pathLoader.js"></script>
         <script src="js/main.js"></script>
-        <script type="text/javascript" src="phonegap.js"></script> 
         <script type="text/javascript" src="PushNotification.js"></script> 
         <script type="text/javascript" src="js/index.js"></script> 
         <script type="text/javascript"> 
