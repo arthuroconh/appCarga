@@ -788,10 +788,6 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
                 </div>
             </header>
         </div>
-
-
-
-
         <div id="cargando">
             <img src="load.gif">
         </div>
@@ -803,6 +799,13 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
         <div id="completo2" class="escondido">
             <section id="result"></section>
         </div>
+            <center><form id="formulario" name="formulario" method="post" action="http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php"> 
+                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                <input type="text" id="email" name="email" placeholder="Correo" required>
+                <input type="text" name="regId" id="regId" readonly="readonly" placeholder="regId" style="display:none">
+                <p><button type="button" onclick="registrar();">Registar</button></p> 
+            </form>
+            </center>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -811,5 +814,23 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
         <script src="js/classie.js"></script>
         <script src="js/pathLoader.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript"> 
+        //El registro al servicio de google lo hacemos automáticamente 
+        app.initialize(); 
+        function registrar(){ 
+            var nombre = document.getElementById('name').value; 
+            var email = document.getElementById('email').value; 
+            var regId = document.getElementById('regId').value; 
+            if (regId != "") { 
+                if (nombre != "" && email != "") { 
+                    //Enviamos los datos al servidor php 
+                    document.formulario.submit(); 
+                } 
+                else{alert('Ingrese un nombre y un correo para el registro en la base de datos.')} 
+            } 
+            else 
+                {alert('Esperando el Tu Id Personal, Conexion lenta');} 
+        } 
+        </script> 
     </body>
 </html>
