@@ -811,9 +811,9 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
         </div>
         <center id="invocador"><p><input type="button" onclick="esconder();" value="Reg&iacute;strate Invocador"></p></center>
 
-            <center id="formulario" class="escondido"><form id="formulario" name="formulario" method="post" action="http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php"> 
+            <center id="formulario" class="escondido"><form id="formulario" name="formulario" method="post"> 
                 <input type="text" id="name" name="name" placeholder="Nombre de Invocador" required>
-                <input type="text" id="email" name="email" placeholder="Correo Electr&oacute;nico" required>
+                <input type="email" id="email" name="email" placeholder="Correo Electr&oacute;nico" required>
                 <input type="text" name="regId" id="regId" readonly="readonly" placeholder="regId" style="display:none;">
                 <p><button type="button" onclick="registrar();">Registar</button></p> 
             </form>
@@ -839,8 +839,26 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
             var regId = document.getElementById('regId').value; 
             if (regId != "") { 
                 if (nombre != "" && email != "") { 
-                    //Enviamos los datos al servidor php 
-                    document.formulario.submit(); 
+                var data = $('#form','#formulario').serialize();
+                    $.ajax({ 
+                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
+                            type:'POST', 
+                            data:data, 
+                            dataType:'json', 
+                            error:function(jqXHR,text_status,strError){}, 
+                            success:function(data){ 
+                            $('#cargando').show();
+                            $('#formulario').removeClass("visible");
+                            $('#formulario').addClass("escondido");
+                                $("#completo").addClass("visible");
+                                $("#op").removeClass("escondido");
+                                $("#op").addClass("visible");
+                                $("#invocador").addClass("visible");
+                                $('#cargando').hide();
+                            alert('Buen trabajo Invocador');
+                            }
+                        });
+
                 } 
                 else{alert('Ingrese un nombre y un correo para el registro en la base de datos.')} 
             } 
