@@ -849,10 +849,12 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
                             success:function(data){ 
                             $('#cargando').show();
                             $('#formulario').removeClass("visible");
-                            $('#formulario').addClass("escondido");
+                            $('#formulario').addClass("escondido");                            
+                                $("#completo").removeClass("escondido");
                                 $("#completo").addClass("visible");
                                 $("#op").removeClass("escondido");
                                 $("#op").addClass("visible");
+                                $("#invocador").removeClass("escondido");
                                 $("#invocador").addClass("visible");
                                 $('#cargando').hide();
                             alert('Buen trabajo Invocador');
