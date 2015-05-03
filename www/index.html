@@ -56,7 +56,14 @@
             }
 
             </script>
-
+        <script type="text/javascript">
+            $('#cargando').ready(function(){
+  
+                $('#cargando').ajaxStart(function() {
+                    $(this).show();
+                });
+            });
+        </script>
         <script charset="utf−8" type="text/javascript">
         function connect(e) 
         { 
