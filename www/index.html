@@ -847,6 +847,7 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
                             dataType:'json', 
                             error:function(jqXHR,text_status,strError){}, 
                             success:function(data){
+                            $('#cargando').show();
                             $('#formularioo').removeClass("visible");
                             $('#formularioo').addClass("escondido");                            
                                 $("#completo").removeClass("escondido");
@@ -855,6 +856,7 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
                                 $("#op").addClass("visible");
                                 $("#invocador").removeClass("escondido");
                                 $("#invocador").addClass("visible");
+                            $('#cargando').hide();
                             alert('Buen trabajo Invocador, ya comenzaras a recibir notificaciones de OP Venezuela.');
                             }
                         });
