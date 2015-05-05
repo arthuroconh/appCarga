@@ -39,13 +39,11 @@
 
           // Set AdMobAds options: 
           admob.setOptions({ 
-            publisherId:          "ca-app-pub-5853780636536752/7740276625",  // Required 
+            publisherId:          "ca-app-pub-5853780636536752/7740276625",  // Required
+            interstitialAdId:     "ca-app-pub-5853780636536752/7740276625",  // Optional 
             tappxIdAndroid:       "/120940746/Pub-4220-Android-4494",        // Optional 
             tappxShare:           0.5                                        // Optional 
           }); 
-
-          // Ejecutamos la función de creación de publicidad de banner 
-          admob.createBannerView(); 
 
           // Ejecutamos la función de creación de publicidad de interstitial 
           admob.requestInterstitial(); 
