@@ -33,6 +33,27 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/effect1.css" />
         <script src="js/modernizr.custom.js"></script>
+    <script type="text/javascript">
+    function showInterstitial(){
+        admobAd.isInterstitialReady(function(isReady){
+            if(isReady){
+                admobAd.showInterstitial();
+            }
+        });
+    }
+    function onInterstitialReceive (message) {
+        alert("onMInterstitialReceive ,you can show it now");
+    }
+    function onReceiveFail (message) {
+       alert("load fail: "+message.type+"  "+message.data);
+    }
+    function onDeviceReady() {
+        admobAd.initInterstitial("institial id");
+        document.addEventListener(admobAd.AdEvent.onInterstitialReceive, onInterstitialReceive, false);
+        document.addEventListener(admobAd.AdEvent.onInterstitialFailedReceive,onReceiveFail, false);
+    }
+    document.addEventListener('deviceready',onDeviceReady, false);
+</script>
         <script type="text/javascript">
         function onDeviceReady() { 
           document.removeEventListener('deviceready', onDeviceReady, false); 
@@ -107,7 +128,13 @@
     }
     </style>
     <body onload="onLoad()" class="demo-1">
-    <div class="app"> 
+    <div class="app">
+    <lu>
+        <li><a href="javascript:admobAd.cacheInterstitial();">load Interstitial</a></li>
+        <br/><br/>
+        <li><a href="javascript:showInterstitial();">show Interstitial</a></li>
+    </lu>
+
         <div id="ip-container" class="ip-container">
             <!-- initial header -->
             <header class="ip-header">
