@@ -72,14 +72,14 @@
         { 
         var term= {button:e}; 
         $.ajax({ 
-                url:'http://desarrollotricolor.com.ve/busqueda/buscar.php', 
+                url:'http://www.mrroymer.com/opvenezuela/op/buscar.php', 
                 type:'POST', 
                 data:term, 
                 dataType:'json', 
                 error:function(jqXHR,text_status,strError){}, 
                 success:function(data){ 
                 $('#cargando').show();
-                $("#result").html("<img src='http://desarrollotricolor.com.ve/busqueda/imagenes/"+data+"'>");
+                $("#result").html("<img src='http://www.mrroymer.com/opvenezuela/op/imagenes/"+data+"'>");
                 $("result").ready(function() {
                 $("#completo").addClass("escondido");
                 $("#completo2").removeClass("escondido");
@@ -845,7 +845,7 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
                 if (nombre != "" && email != "") { 
                 var dato = $('#formulario').serialize();
                     $.ajax({ 
-                            url:'http://desarrollotricolor.com.ve/PhonegapPushNotifications/registro.php', 
+                            url:'http://www.mrroymer.com/opvenezuela/registro.php', 
                             type:'POST', 
                             data:dato, 
                             dataType:'json', 
