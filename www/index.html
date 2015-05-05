@@ -33,6 +33,26 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/effect1.css" />
         <script src="js/modernizr.custom.js"></script>
+        <script type="text/javascript">
+        function onDeviceReady() { 
+          document.removeEventListener('deviceready', onDeviceReady, false); 
+
+          // Set AdMobAds options: 
+          admob.setOptions({ 
+            publisherId:          "ca-app-pub-5853780636536752/7740276625",  // Required 
+            tappxIdAndroid:       "/120940746/Pub-4220-Android-4494",        // Optional 
+            tappxShare:           0.5                                        // Optional 
+          }); 
+
+          // Ejecutamos la función de creación de publicidad de banner 
+          admob.createBannerView(); 
+
+          // Ejecutamos la función de creación de publicidad de interstitial 
+          admob.requestInterstitial(); 
+        } 
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
         <title>Hello World</title>
 
         <script type="text/javascript">
