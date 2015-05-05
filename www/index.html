@@ -33,38 +33,20 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/effect1.css" />
         <script src="js/modernizr.custom.js"></script>
-    <script type="text/javascript">
-    function showInterstitial(){
-        admobAd.isInterstitialReady(function(isReady){
-            if(isReady){
-                admobAd.showInterstitial();
-            }
-        });
-    }
-    function onInterstitialReceive (message) {
-        alert("onMInterstitialReceive ,you can show it now");
-    }
-    function onReceiveFail (message) {
-       alert("load fail: "+message.type+"  "+message.data);
-    }
-    function onDeviceReady() {
-        admobAd.initInterstitial("ca-app-pub-5853780636536752/7740276625");
-        document.addEventListener(admobAd.AdEvent.onInterstitialReceive, onInterstitialReceive, false);
-        document.addEventListener(admobAd.AdEvent.onInterstitialFailedReceive,onReceiveFail, false);
-    }
-    document.addEventListener('deviceready',onDeviceReady, false);
-</script>
         <script type="text/javascript">
         function onDeviceReady() { 
           document.removeEventListener('deviceready', onDeviceReady, false); 
 
           // Set AdMobAds options: 
           admob.setOptions({ 
-            publisherId:          "ca-app-pub-5853780636536752/7740276625",  // Required
-            interstitialAdId:     "ca-app-pub-5853780636536752/7740276625",  // Optional 
-            tappxIdAndroid:       "/120940746/Pub-4220-Android-4494",        // Optional 
+            publisherId:          "ca-app-pub-5853780636536752/7740276625",  // Required 
+            tappxIdAndroid:       "/120940746/Pub-4220-Android-4494",        // Optional
+            interstitialAdId:     "ca-app-pub-5853780636536752/7740276625",  // Optional  
             tappxShare:           0.5                                        // Optional 
           }); 
+
+          // Ejecutamos la función de creación de publicidad de banner 
+          admob.createBannerView(); 
 
           // Ejecutamos la función de creación de publicidad de interstitial 
           admob.requestInterstitial(); 
@@ -128,13 +110,7 @@
     }
     </style>
     <body onload="onLoad()" class="demo-1">
-    <div class="app">
-    <lu>
-        <li><a href="javascript:admobAd.cacheInterstitial();">load Interstitial</a></li>
-        <br/><br/>
-        <li><a href="javascript:showInterstitial();">show Interstitial</a></li>
-    </lu>
-
+    <div class="app"> 
         <div id="ip-container" class="ip-container">
             <!-- initial header -->
             <header class="ip-header">
