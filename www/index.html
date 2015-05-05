@@ -41,15 +41,17 @@
           admob.setOptions({ 
             publisherId:          "ca-app-pub-5853780636536752/7740276625",  // Required 
             tappxIdAndroid:       "/120940746/Pub-4220-Android-4494",        // Optional
-            interstitialAdId:     "ca-app-pub-5853780636536752/7740276625",  // Optional  
-            tappxShare:           0.5                                        // Optional 
+            interstitialAdId:     "ca-app-pub-5853780636536752/3713703024",  // Optional  
+            tappxShare:           0.5,                                       // Optional
+            adSize:               admob.AD_SIZE.SMART_BANNER,
+            autoShowInterstitial: true
           }); 
 
           // Ejecutamos la función de creación de publicidad de banner 
           admob.createBannerView(); 
 
           // Ejecutamos la función de creación de publicidad de interstitial 
-          admob.requestInterstitial(); 
+          admob.requestInterstitial();
         } 
 
         document.addEventListener("deviceready", onDeviceReady, false);
