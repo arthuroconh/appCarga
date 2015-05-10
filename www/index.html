@@ -102,6 +102,8 @@
                     $("#completo").addClass("escondido");
                     $("#op").removeClass("visible");
                     $("#op").addClass("escondido");
+                    $("#re").removeClass("escondido");
+                    $("#re").addClass("visible");
                     $("#invocador").addClass("escondido");
                     $('#cargando').hide();
         }
@@ -809,7 +811,8 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
             <center><input onclick="connect(this.value)" type="button" value="Reclama c&oacute;digo" class="rec" /></center>
         </div>
             <div style="clear:both"></div>       
-            <center id="op" class="visible"><img src="img/bg.png"></center>
+            <center id="op" class="visible"><img src="img/bg.png"></center>       
+            <center id="re" class="escondido"><img src="img/re.png"></center>
         <div id="completo2" class="escondido">
             <section id="result"></section>
         </div>
@@ -858,6 +861,8 @@ KwMNBkfuzjRjfWUV2FYLMcpKK9Ha8J8gKh86ZO+kzaWXva6oNXglmM6nI5ZLap+swn6jrFwYjrjw
                                 $("#completo").addClass("visible");
                                 $("#op").removeClass("escondido");
                                 $("#op").addClass("visible");
+                                $("#re").removeClass("visible");
+                                $("#re").addClass("escondido");
                                 $("#invocador").removeClass("escondido");
                                 $("#invocador").addClass("visible");
                             $('#cargando').hide();
