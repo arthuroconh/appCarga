@@ -74,7 +74,7 @@ var app = {
 
             case 'message': 
               // NOTIFICACION!!! 
-              alert('Neva Notifiacion : '+e.message+''); 
+              alert('Nueva Notifiacion : '+e.message+''); 
             break; 
 
             case 'error': 
